@@ -18,12 +18,7 @@ const firebaseConfig = {
   measurementId: process.env.REACT_APP_MEASUREMENT_ID,
 };
 
-// REACT_APP_FIREBASE_API_KEY=AIzaSyA8MgyPlyWOpUp4arsJblvgR1mGGid71XQ
-// REACT_APP_FIREBASE_AUTH_DOMAIN=netflixclone-2b86a.firebaseapp.com
-// REACT_APP_FIREBASE_PROJECT_ID=netflixclone-2b86a
-// REACT_APP_FIREBASE_STORAGE_BUCKET=netflixclone-2b86a.appspot.com
-// REACT_APP_MESSAGING_SENDER=853112493939
-// REACT_APP_APP_ID=1:853112493939:web:ca4567f06e07e2eb605706
+ 
 
 // Initialize Firebase
 export const app = initializeApp(firebaseConfig);
