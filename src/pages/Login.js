@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import { UserAuth } from "../context/Authanti";
 
 export default function Login() {
@@ -37,6 +37,7 @@ export default function Login() {
     e.preventDefault();
     try {
       await logIn(email, password);
+      Navigate("/");
     } catch (error) {
       console.log(error);
     }
