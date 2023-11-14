@@ -2,14 +2,39 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { FaHeart, FaRegHeart } from "react-icons/fa";
 import { MdChevronLeft, MdChevronRight } from "react-icons/md";
+// import { arrayUnion, doc, updateDoc } from "firebase/firestore";
+// import { UserAuth } from "../context/Authanti";
+// import { db } from "../firebase";
 
-const Row = ({ title, fetchUrl, rowID }) => {
+const Row = ({ title, fetchUrl, rowID, item }) => {
   const [movies, setMovies] = useState([]);
   const [like, setLike] = useState(false);
+  // const [likeM, setLikeM] = useState(false);
+  // const [saved, setSaved] = useState(false);
+  // const { user } = UserAuth();
+
+  // const movieID = doc(db, "users", `${user?.email}`);
+
+  // const saveShow = async () => {
+  //   if (user?.email) {
+  //     setLikeM(!likeM);
+  //     setSaved(true);
+  //     await updateDoc(movieID, {
+  //       savedShows: arrayUnion({
+  //         id: item.id,
+  //         title: item.title,
+  //         img: item.backdrop_path,
+  //       }),
+  //     });
+  //   } else {
+  //     alert("Please log in to save a movie");
+  //   }
+  // };
 
   useEffect(() => {
     axios.get(fetchUrl).then((response) => {
       setMovies(response.data.results);
+      
     });
   }, [fetchUrl]);
 
@@ -49,7 +74,7 @@ const Row = ({ title, fetchUrl, rowID }) => {
                 <p className=" text-sm whitespace-normal md:text-sm font-bold flex justify-center items-center text-center h-full">
                   {item?.title}
                 </p>
-                <p>
+                <p  >
                   {like ? (
                     <FaHeart className="absolute top-4  left-4 text-gray-300" />
                   ) : (
